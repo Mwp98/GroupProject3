@@ -1,7 +1,9 @@
-import requests,re,datetime
+import requests
 list = []
 Z = 0
 K = 0
+
+
 url='https://s3.amazonaws.com/tcmg476/http_access_log'
 r = requests.get(url, allow_redirects=True)
 
@@ -13,9 +15,13 @@ with open('http_access_log.txt') as j:
     for line in j:
         V = line.split(' ')
         list.append(V[3])
-        K = K + 1;
+        
+    for date in list:
+         if (date[10:12] == '95'):
+           K = K + 1;
     
-print(K)  
+print(K) 
+
 print("The total requests made in the time period were")
 with open('http_access_log.txt') as j:
     
@@ -25,4 +31,3 @@ with open('http_access_log.txt') as j:
         Z = Z + 1;
 
 print (Z)
-print (list[1])
