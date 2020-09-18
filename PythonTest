@@ -11,12 +11,12 @@ with open('http_access_log.txt') as j:
     
     for line in j:
         v = line.split('')
-    list.append(variable[3])
+    list.append(v[3])
 print("The total requests made in the time period were")
 with open('http_access_log.txt') as j:
     
     for line in j:
         v = line.split('')
-    list.append(variable[3])
+    list.append(v[3])
 
 print list
