@@ -7,11 +7,16 @@ r = requests.get(url, allow_redirects=True)
 open ('http_access_log.txt','wb').write(r.content)
 
 print("The total number of requests made in the last year were")
-
+with open('http_access_log.txt') as j:
+    
+    for line in j:
+        v = line.split('')
+    list.append(variable[3])
 print("The total requests made in the time period were")
 with open('http_access_log.txt') as j:
-    line_count = 0
+    
     for line in j:
-        line_count += 1
+        v = line.split('')
+    list.append(variable[3])
 
-print line_count
+print list
